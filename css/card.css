@@ -1,0 +1,339 @@
+/* ===============================
+   CARD COMPONENT - GEAR GAMES STYLE
+   =============================== */
+#cards-container > .col-md-3 > .card {
+  background-color: #1e1e2f;
+  border: 1px solid #0c9a79;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+/* ===============================
+   CARD HEADER
+   =============================== */
+.card-header {
+  background-color: #0c9a79;
+  color: #fff;
+  padding: 15px;
+  border-radius: 12px 12px 0 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+.card-header:hover {
+  background-color: #00ff9f;
+  color: #000;
+}
+/* ===============================
+   CARD BODY
+   =============================== */
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1e1e2f;
+  border-radius: 0 0 12px 12px;
+}
+/* ===============================
+   CARD FOOTER
+   =============================== */
+.card-footer {
+  background-color: #0c9a79;
+  color: #fff;
+  padding: 5px;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  border-top: 1px solid #0c9a79;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-footer:hover {
+  background-color: #00ff9f;
+  color: #000;
+}
+/* ===============================
+   CARD
+   =============================== */
+.card {
+  background-color: #1e1e2f;
+  border: 1px solid #0c9a79;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+}
+.card:hover {
+  transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* ===============================
+   IMAGEM DO CARD
+   =============================== */
+.card-img-top {
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* ===============================
+   IMAGEM DO CARD - RESPONSIVO
+   =============================== */
+@media (max-width: 768px) { /* Ajuste para telas menores */
+  .card-img-top {
+    max-height: 150px;
+    object-fit: cover;
+  }
+}
+/* ===============================
+   CARD - TÍTULO E TEXTO
+   =============================== */
+.card-title,
+.card-text {
+  margin: 10px 0;
+}
+/* ===============================
+   TÍTULO DO CARD
+   =============================== */
+.card-title {
+  color: #00ff9f;
+}
+/* ===============================
+   TÍTULO DO CARD - RESPONSIVO
+   =============================== */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+/* ===============================
+   TEXTO DO CARD
+   =============================== */
+.card-text {
+  color: #ccc;
+}
+p.card-text {
+  font-size: 15px;
+  line-height: 1.0; /* Espaçamento entre linhas */
+  text-align: justify;
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+/* ===============================
+   TEXTO DO CARD - RESPONSIVO
+   =============================== */
+@media (max-width: 768px) {
+  .card-text {  
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+/* ===============================
+   TEXTO DO CARD - RESPONSIVO
+   =============================== */
+@media (max-width: 768px) {
+  .card-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+/* ===============================
+   LINK DO CARD - RESPONSIVO
+   =============================== */
+@media (max-width: 768px) {
+  .card-link {
+    font-size: 0.9rem;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+  }
+}
+/* ===============================
+   LINK DO CARD
+   =============================== */
+@media (max-width: 768px) {
+  .card-link {
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+/* ===============================
+   LINK DO CARD
+   =============================== */
+.card-link {
+  color: #52af8e;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: #00ff9f;
+  text-decoration: underline;
+}
+/* ===============================
+   LISTA DE JOGOS
+   =============================== */
+.card .list-group-item {
+  background-color: #1e1e2f;
+  color: #ccc;
+  border: none;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.card .list-group-item:hover {
+  background-color: #0c9a79;
+  color: #fff;
+}
+/* ===============================
+   LISTA DE JOGOS - RESPONSIVO
+   =============================== */
+@media (max-width: 768px) {
+  .card .list-group-item {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 8px;
+  }
+}
+
+/* ===============================
+   LISTAS INTERNAS
+   =============================== */
+.card .list-group {
+  border: none;
+}
+
+#cards-container > .col-md-3 {
+  flex: 0 0 auto;
+  width: 22%; /* reduz largura */
+  padding: 10px;
+}
+.card {
+  padding: 15px;
+  max-height: 540px;
+  min-height: 460px;
+}
+.card-img-top {
+  height: 140px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 12px;
+}
+
+.card .list-group-item:hover {
+  background-color: #0c9a79;
+  color: #fff;
+}
+/* ===============================
+   LISTA DE JOGOS - RESPONSIVO
+   ============================= */
+@media (max-width: 768px) {   
+  .card .list-group-item {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 8px;
+  }
+} 
+/* ===============================
+   BOTÃO DO CARD
+   =============================== */
+.card .btn {
+  background-color: #00ff9f;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.card .btn:hover {
+  background-color: #00cc7f;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   BOTÃO DE FAVORITO
+   =============================== */
+.card .btn-favorite {
+  background-color: transparent;
+  border: none;
+  color: #52af8e;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.card .btn-favorite:hover {
+  color: #52af8e;
+  transform: scale(1.1);
+}
+.icon-actions {
+  gap: 20px;
+}
+.icon-actions .card-link i {
+  font-size: 22px;
+  color: #52af8e;
+  transition: color 0.3s ease;
+}
+.icon-actions .card-link i:hover {
+  color: #00ff9f;
+}
+
+/* ===============================
+   BOTÃO DE FAVORITO ATIVO
+   =============================== */
+.card .btn-favorite.active {
+  color: #52af8e;
+  transform: scale(1.1);
+}
+/* ===============================
+   BOTÃO DE FAVORITO INATIVO
+   =============================== */
+.card .btn-favorite.inactive {
+  color: #52af8e;;
+  transform: scale(1);
+}
+/* ===============================
+   ANIMAÇÃO DE CARREGAMENTO
+   =============================== */
+.card .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 24px;
+  color: #00ff9f;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
