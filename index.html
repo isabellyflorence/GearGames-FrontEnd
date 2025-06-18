@@ -2,17 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gear Games</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
-  <!-- Icones Lucide -->
+
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- CSS Personalizados -->
@@ -22,7 +23,6 @@
   <link rel="stylesheet" href="css/card.css" />
   <link rel="stylesheet" href="css/footer.css" />
 </head>
-
 <body>
   <!-- NAVBAR -->
   <header class="navbar1">
@@ -35,41 +35,42 @@
         <li><a href="#">Biblioteca</a></li>
         <li><a href="#">Assinatura</a></li>
         <li><a href="#">Suporte</a></li>
-         <li><div class="categorias-dropdown">
-                  <button class="categorias-btn">Categorias</button>
-                    <div class="categorias-menu">
-                      <a href="#">Multiplayer</a>
-                      <a href="#">Simulação</a>
-                      <a href="#">Terror</a>
-                   </div>
-               </div>
-           </li>
-       </ul>
+        <li>
+          <div class="categorias-dropdown">
+            <button class="categorias-btn">Categorias</button>
+            <div class="categorias-menu">
+              <a href="#">Multiplayer</a>
+              <a href="#">Simulação</a>
+              <a href="#">Terror</a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <!-- Barra de busca -->
     <form class="search-bar" role="search">
-      <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar"/>
-      <button class="btn-search" type="submit">Buscar</button>
+      <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
+      <button class="btn-search" type="submit">
+        <i data-lucide="search" width="20px" height="20px"></i>
+      </button>
     </form>
 
-    <!-- Login / Cadastro -->
+    <!-- Login / Cadastro / Idioma -->
     <div class="login-container">
       <a href="#" class="login-link">Login</a>
       <a href="#" class="signup-link">Cadastro</a>
-   <!-- Seletor de idioma -->
-    <select class="form-select form-select-sm idioma-select" aria-label="Selecionar idioma">
-      <option value="pt" selected>🌐 Idioma</option>
-      <option value="en">br PT</option>
-      <option value="en">🇺🇸 EN</option>
-      <option value="es">🇪🇸 ES</option>
-    </select>
-  </div>
+      <select class="form-select form-select-sm idioma-select" aria-label="Selecionar idioma">
+        <option value="pt" selected>🌐 Idioma</option>
+        <option value="pt">🇷🇷 PT</option>
+        <option value="en">🇺🇸 EN</option>
+        <option value="es">🇪🇸 ES</option>
+      </select>
+    </div>
   </header>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="container-centralizado">
-    
     <!-- CARROSSEL -->
     <div class="capsule-container">
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -99,75 +100,140 @@
     <h1 class="popular">MAIS PROCURADOS</h1>
     <div id="cards-container" class="row g-4 mt-5" style="width: 1000px;">
 
-      <!--  GTA 6 -->
-      <div class="col-md-3">
-        <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
-          <div class="card-body">
-            <h5 class="card-title">GTA 6</h5>
-            <p class="card-text">Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">R$ 49,90</li>
-          </ul>
-          <div class="card-body">
-            <div class="icon-actions">
-              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
-              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
-              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
-            </div>
-          </div>
-        </div>
+      <!-- GTA 6 -->
+<div class="col-md-3">
+  <div class="card h-100 d-flex flex-column">
+    <img src="/img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+    
+    <div class="card-body d-flex flex-column justify-content-between">
+      <div>
+        <h5 class="card-title">GTA 6</h5>
+        <p class="card-text">
+          Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+        </p>
       </div>
 
-      <!-- RDR2 -->
-      <div class="col-md-3">
-        <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardrdr2.jpg" class="card-img-top" alt="RDR2">
-          <div class="card-body">
-            <h5 class="card-title">Red Dead Redemption 2</h5>
-            <p class="card-text">Viva o Velho Oeste em um mundo detalhado, com ação, emoção e liberdade total de exploração.</p>
-          </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 59,90</li></ul>
-          <div class="card-body">
-            <div class="icon-actions">
-              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
-              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
-              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
-            </div>
-          </div>
+      <div class="mt-auto text-center">
+        <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+          Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+        </a>
+        <!-- Preço do jogo -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+        </ul>
+        <div class="icon-actions mt-2">
+          <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+          <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+          <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
         </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+<!-- RDR2 -->
+<div class="col-md-3">
+  <div class="card h-100 d-flex flex-column">
+    <img src="/img/cardrdr2.jpg" class="card-img-top" alt="Red Dead Redemption 2">
+    
+    <div class="card-body d-flex flex-column justify-content-between">
+      <div>
+        <h5 class="card-title">Red Dead Redemption 2</h5>
+        <p class="card-text">
+          Viva o Velho Oeste em um mundo detalhado, com ação, emoção e liberdade total de exploração.
+        </p>
       </div>
 
-      <!-- TLOU2 -->
-      <div class="col-md-3">
-        <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardtlou2.jpg" class="card-img-top" alt="TLOU2">
-          <div class="card-body">
-            <h5 class="card-title">The Last of Us II</h5>
-            <p class="card-text">Encare uma jornada emocional intensa com gráficos realistas e combates envolventes.</p>
-          </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 69,90</li></ul>
-          <div class="card-body">
-            <div class="icon-actions">
-              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
-              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
-              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
-            </div>
-          </div>
+      <div class="mt-auto text-center">
+        <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center">
+          Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+        </a>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+      </ul>
+        <!-- Ícones de ação -->
+        <div class="icon-actions mt-2">
+          <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+          <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+          <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
         </div>
       </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+<!-- TLOU2 -->
+<div class="col-md-3">
+  <div class="card h-100 d-flex flex-column">
+    <img src="/img/cardtlou2.jpg" class="card-img-top" alt="TLOU2">
+
+    <div class="card-body d-flex flex-column justify-content-between">
+
+      <!-- Bloco de conteúdo textual -->
+      <div>
+        <h5 class="card-title">The Last of Us II</h5>
+        <p class="card-text">
+          Encare uma jornada emocional intensa com gráficos realistas e combates envolventes.
+        </p>
+      </div>
+
+      <!-- Ações ficam ancoradas no final -->
+      <div class="mt-auto text-center">
+        <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center">
+          Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+        </a>
+
+        <!-- Preço -->
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+    </ul>
+        <!-- Ícones de ação -->
+        <div class="icon-actions mt-2">
+          <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+          <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+          <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
 
       <!-- Spider-Man 2 -->
-      <div class="col-md-3">
-        <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardspiderman.jpg" class="card-img-top" alt="Spider-Man 2">
-          <div class="card-body">
+    <div class="col-md-3">
+      <div class="card h-100 d-flex flex-column">
+        <!-- Imagem do jogo -->
+        <img src="/img/cardspiderman.jpg" class="card-img-top" alt="Spider-Man 2" />
+
+        <div class="card-body d-flex flex-column justify-content-between">
+          <!-- Conteúdo textual (título e descrição) -->
+          <div>
             <h5 class="card-title">Spider-Man 2</h5>
-            <p class="card-text">Viva como Peter Parker e Miles Morales em combates espetaculares e histórias emocionantes.</p>
+            <p class="card-text">
+              Viva como Peter Parker e Miles Morales em combates espetaculares e histórias emocionantes.
+            </p>
           </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 69,90</li></ul>
-          <div class="card-body">
+
+          <!-- Rodapé do card com "Ver mais", preço e ícones, alinhado ao final -->
+          <div class="mt-auto text-center">
+            <!-- Link "Ver mais" -->
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+
+            <!-- Preço usando list-group-flush para consistência -->
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+
+            <!-- Ícones de ação -->
             <div class="icon-actions">
               <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
               <a href="#" class="card-link"><i data-lucide="heart"></i></a>
@@ -176,17 +242,38 @@
           </div>
         </div>
       </div>
+    </div>
+
+
 
       <!-- Horizon Forbidden West -->
-      <div class="col-md-3">
-        <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardhfw.jpg" class="card-img-top" alt="Horizon Forbidden West">
-          <div class="card-body">
+    <div class="col-md-3">
+      <div class="card h-100 d-flex flex-column">
+        <!-- Imagem do jogo -->
+        <img src="/img/cardhfw.jpg" class="card-img-top" alt="Horizon Forbidden West" />
+
+        <div class="card-body d-flex flex-column justify-content-between">
+          <!-- Conteúdo textual (título e descrição) -->
+          <div>
             <h5 class="card-title">Horizon Forbidden West</h5>
-            <p class="card-text">Explore um mundo pós-apocalíptico repleto de máquinas e mistérios.</p>
+            <p class="card-text">
+              Explore um mundo pós-apocalíptico repleto de máquinas e mistérios.
+            </p>
           </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 59,90</li></ul>
-          <div class="card-body">
+
+          <!-- Rodapé do card com "Ver mais", preço e ícones, alinhado ao final -->
+          <div class="mt-auto text-center">
+            <!-- Link "Ver mais" -->
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+
+            <!-- Preço usando list-group-flush para consistência -->
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+
+            <!-- Ícones de ação -->
             <div class="icon-actions">
               <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
               <a href="#" class="card-link"><i data-lucide="heart"></i></a>
@@ -195,21 +282,43 @@
           </div>
         </div>
       </div>
+    </div>
+
+
 
       <!-- God of War Ragnarök -->
       <div class="col-md-3">
         <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardgow.jpg" class="card-img-top" alt="God of War Ragnarök">
-          <div class="card-body">
-            <h5 class="card-title">God of War Ragnarök</h5>
-            <p class="card-text">Acompanhe Kratos e Atreus em uma nova aventura épica cheia de mitologia nórdica.</p>
-          </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 69,90</li></ul>
-          <div class="card-body">
-            <div class="icon-actions">
-              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
-              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
-              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+          <!-- Imagem do jogo -->
+          <img src="/img/cardgow.jpg" class="card-img-top" alt="God of War Ragnarök" />
+
+          <div class="card-body d-flex flex-column justify-content-between">
+            <!-- Conteúdo textual (título e descrição) -->
+            <div>
+              <h5 class="card-title">God of War Ragnarök</h5>
+              <p class="card-text">
+                Acompanhe Kratos e Atreus em uma nova aventura épica cheia de mitologia nórdica.
+              </p>
+            </div>
+
+            <!-- Rodapé do card com "Ver mais", preço e ícones, alinhado ao final -->
+            <div class="mt-auto text-center">
+              <!-- Link "Ver mais" -->
+              <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+                Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+              </a>
+
+              <!-- Preço usando list-group-flush para consistência -->
+              <ul class="list-group list-group-flush mb-2">
+                <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+              </ul>
+
+              <!-- Ícones de ação -->
+              <div class="icon-actions">
+                <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+                <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+                <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -218,17 +327,36 @@
       <!-- Final Fantasy XVI -->
       <div class="col-md-3">
         <div class="card h-100 d-flex flex-column">
-          <img src="/img/cardff.jpg" class="card-img-top" alt="Final Fantasy XVI">
-          <div class="card-body">
-            <h5 class="card-title">Final Fantasy XVI</h5>
-            <p class="card-text">Mergulhe em um mundo de fantasia épica com personagens memoráveis e batalhas emocionantes.</p>
-          </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 69,90</li></ul>
-          <div class="card-body">
-            <div class="icon-actions">
-              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
-              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
-              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+          <!-- Imagem do jogo -->
+          <img src="/img/cardff.jpg" class="card-img-top" alt="Final Fantasy XVI" />
+
+          <div class="card-body d-flex flex-column justify-content-between">
+            <!-- Conteúdo textual (título e descrição) -->
+            <div>
+              <h5 class="card-title">Final Fantasy XVI</h5>
+              <p class="card-text">
+                Mergulhe em um mundo de fantasia épica com personagens memoráveis e batalhas emocionantes.
+              </p>
+            </div>
+
+            <!-- Rodapé do card com "Ver mais", preço e ícones, alinhado ao final -->
+            <div class="mt-auto text-center">
+              <!-- Link "Ver mais" -->
+              <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+                Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+              </a>
+
+              <!-- Preço usando list-group-flush para consistência -->
+              <ul class="list-group list-group-flush mb-2">
+                <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+              </ul>
+
+              <!-- Ícones de ação -->
+              <div class="icon-actions">
+                <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+                <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+                <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -237,23 +365,41 @@
       <!-- Elden Ring -->
       <div class="col-md-3">
         <div class="card h-100 d-flex flex-column">
-          <img src="/img/carder.jpg" class="card-img-top" alt="Elden Ring">
-          <div class="card-body">
-            <h5 class="card-title">Elden Ring</h5>
-            <p class="card-text">Uma jornada épica em um mundo aberto cheio de desafios e segredos.</p>
-          </div>
-          <ul class="list-group list-group-flush"><li class="list-group-item">R$ 69,90</li></ul>
-          <div class="card-body">
-            <div class="icon-actions">
-              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
-              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
-              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+          <!-- Imagem do jogo -->
+          <img src="/img/carder.jpg" class="card-img-top" alt="Elden Ring" />
+
+          <div class="card-body d-flex flex-column justify-content-between">
+            <!-- Conteúdo textual (título e descrição) -->
+            <div>
+              <h5 class="card-title">Elden Ring</h5>
+              <p class="card-text">
+                Uma jornada épica em um mundo aberto cheio de desafios e segredos.
+              </p>
+            </div>
+
+            <!-- Rodapé do card com "Ver mais", preço e ícones, alinhado ao final -->
+            <div class="mt-auto text-center">
+              <!-- Link "Ver mais" -->
+              <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+                Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+              </a>
+
+              <!-- Preço usando list-group-flush para consistência -->
+              <ul class="list-group list-group-flush mb-2">
+                <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+              </ul>
+
+              <!-- Ícones de ação -->
+              <div class="icon-actions">
+                <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+                <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+                <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-    </div>
   </main>
 
   <!-- RODAPÉ -->

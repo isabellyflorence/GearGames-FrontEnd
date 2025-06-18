@@ -1,15 +1,19 @@
+.footer {
+  display: grid;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
 
-
-.footer{
-    display: grid;
-    width: 100%;
-    font-size: 14px;
-    background-color: rgb(26, 29, 40);;
-    background-image: linear-gradient(to right, #000000, rgba(12, 154, 121, 0.4));
-    color: #bbb;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
+  font-size: 14px;
+  background-color: rgb(26, 29, 40);
+  background-image: linear-gradient(to right, #000000, rgba(12, 154, 121, 0.4));
+  color: #bbb;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1;
 }
 
 .footer a {

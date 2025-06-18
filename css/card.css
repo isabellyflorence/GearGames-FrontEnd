@@ -3,24 +3,24 @@
    Define o visual base dos cards com cor, borda, sombra e animação
 =============================== */
 .card {
-  background-color: #1e1e2f; /* Fundo escuro estilizado */
-  border: 1px solid #0c9a79; /* Borda verde */
-  border-radius: 12px; /* Cantos arredondados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra suave */
-  color: #fff; /* Texto branco */
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  max-height: 480px; /* Altura máxima controlada */
-  width: 260px;
-  height: 280px;
+  background-color: #1e1e2f; /* Fundo escuro */
+  border: 1px solid #0c9a79; /* Borda verde escuro */
+  border-radius: 12px; /* Bordas arredondadas */
+  color: #fff;
+  padding: 0; /* Remove padding padrão */
+  display: flex; /* Permite flexbox */
+  flex-direction: column; /* Coloca os elementos em coluna */
+  height: 100%; /* Permite que os cards ocupem toda a altura disponível */
+  min-height: 520px; /* Altura mínima para os cards */
+  max-width: 260px; /* Largura máxima dos cards */
+  overflow: visible; /* Permite que o conteúdo transborde visivelmente */
+  flex: 1 1 260px; /* Permite que os cards se ajustem */
 }
 
 /* Efeito ao passar o mouse */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
 }
 
 /* ===============================
@@ -31,12 +31,12 @@
   background-color: #0c9a79; /* Verde escuro */
   color: #fff;
   padding: 15px;
-  border-radius: 12px 12px 0 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
+  border-radius: 12px 12px 0 0; /* Bordas arredondadas no topo */
+  font-size: 1.2rem; /* Tamanho do texto */
+  font-weight: bold; /* Negrito */
+  text-align: center; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
 }
 
 /* Hover do cabeçalho */
@@ -50,12 +50,12 @@
    Onde ficam o conteúdo, texto e botões
 =============================== */
 .card-body {
-  flex: 1; /* Ocupa o espaço disponível */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 12px;
-  background-color: #1e1e2f;
+  display: flex;
+  flex: 1; /* Permite que o corpo do card ocupe o espaço restante */
+  position: relative; /* Permite posicionamento absoluto de elementos internos */
+  flex-direction: column; /* Coloca os elementos em coluna */
+  justify-content: space-between; /* Distribui o espaço entre os elementos */
 }
 
 /* ===============================
@@ -65,12 +65,12 @@
 .card-footer {
   background-color: #0c9a79;
   color: #fff;
-  padding: 5px;
+  padding: 10px;
   border-radius: 0 0 12px 12px;
   text-align: center;
   font-weight: bold;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,17 +83,28 @@
   color: #000;
 }
 
+.footer-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Espaçamento entre os botões */
+}
+
 /* ===============================
    IMAGEM DO CARD
    Exibição do jogo/imagem em destaque
 =============================== */
 .card-img-top {
+  width: 100%;
   height: 180px;
-  object-fit: cover; /* Corta proporcionalmente */
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  display: block; /* Garante que a imagem seja um bloco */
 }
 
+
 /* Responsivo para telas pequenas */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Ajusta o tamanho da imagem em telas menores */
   .card-img-top {
     height: 150px;
   }
@@ -112,8 +123,31 @@
   margin: 10px 0;
   color: #ccc; /* Texto claro */
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.4; /* Melhora a legibilidade */
   text-align: left;
+}
+
+.ver-mais-link{
+  color: #52af8e; /* Ícones de links */
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 2px;
+  display: inline-block; /* Permite que o link seja um bloco */
+  cursor: pointer; /* Indica que é clicável */
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.1); /* Fundo sutil */
+  width: fit-content; /* Ajusta a largura ao conteúdo */  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center; /* Centraliza o texto */
+}
+
+.ver-mais-link:hover {
+  color: #00ff9f; /* Verde neon ao passar o mouse */
+  text-decoration: underline; /* Sublinha o texto ao passar o mouse */
 }
 
 /* Responsividade de título e texto */
@@ -158,7 +192,7 @@
   display: flex;
   justify-content: center;
   gap: 10px; /* Espaçamento entre ícones */
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 /* ===============================
@@ -170,16 +204,15 @@
 }
 
 .card .list-group-item {
-  background-color: #1e1e2f;
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Remove borda */
   color: #ccc;
+  font-size: 18px;
   border: none;
-  padding: 10px;
+  padding: 4px 0;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.card .list-group-item:hover {
-  background-color: #0c9a79;
-  color: #fff;
+  margin-top: 0%; /* Remove margem superior */
+  text-align: center; /* Alinha o texto à esquerda */
 }
 
 /* Lista responsiva */
@@ -205,7 +238,7 @@
 
 .card .btn:hover {
   background-color: #00cc7f;
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* Eleva o botão ao passar o mouse */
 }
 
 /* ===============================
@@ -244,14 +277,22 @@
   height: 100%;
   font-size: 24px;
   color: #00ff9f;
-  animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite; /* Animação de pulsação */
+  position: absolute; /* Posiciona sobre o conteúdo do card */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 47, 0.8); /* Fundo semi-transparente */
+  border-radius: 12px; /* Bordas arredondadas */
+  z-index: 10; /* Garante que fique acima do conteúdo do card */
 }
 
 /* Keyframes para animação "pulse" */
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes pulse { /* Animação de pulsação */
+  0% { transform: scale(1); opacity: 1; } /* Início */
+  50% { transform: scale(1.05); opacity: 0.7; } /* Meio da animação */
+  100% { transform: scale(1); opacity: 1; } /* Fim */
 }
 
 /* ===============================
@@ -259,7 +300,13 @@
    Define a largura e espaçamento das colunas
 =============================== */
 #cards-container > .col-md-3 {
-  flex: 0 0 auto;
+  flex: 0 0 auto; /* Permite que a coluna não encolha */
+  display: flex; /* Permite flexbox */
+  gap: 20px; /* Espaçamento entre os cards */
+  flex-direction: wrap; /* Permite que os cards se ajustem em várias linhas */
+  justify-content: center;
+  align-items: center;
   width: 24%; /* Mais largo que 22% anterior */
   padding: 10px;
+  background: linear-gradient(135deg, #121212, #1e1e2f);
 }
