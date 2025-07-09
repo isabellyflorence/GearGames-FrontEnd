@@ -1,0 +1,215 @@
+/* NAVBAR estilo gamer com gradiente escuro e verde neon */
+.navbar1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #000, #1a1a1a, rgba(12, 154, 121, 0.4));
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* controle qual elemento aparece por cima do outro */
+  box-shadow: 0 2px 8px rgba(0, 255, 170, 0.3);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo-img {
+  height: 75px;
+}
+
+/* Agrupamento inicial */
+.nav-start {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* LINKS PRINCIPAIS */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.nav-links li a:hover {
+  color: #00ff9f;
+  text-shadow: 0 0 8px #25a071;
+}
+
+/* DROPDOWN CATEGORIAS */
+.categorias-dropdown {
+  position: relative;
+}
+
+.categorias-btn {
+  background: none;
+  border: none;
+  color: #e0e0e0;;
+  font-size: 20px;
+  display: flex;
+  cursor: pointer;
+  padding: 8px 9px;
+  transition: color 0.3s ease;
+}
+
+.categorias-btn:hover {
+  color: #00ff9f;
+  text-shadow: 0 0 6px #00ff9f;
+}
+
+.categorias-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 255, 170, 0.1);
+  padding: 8px 0;
+  border-radius: 6px;
+  min-width: 160px;
+  flex-direction: column;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.categorias-dropdown:hover .categorias-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.categorias-menu a {
+  color: #ccc;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.categorias-menu a:hover {
+  background-color: rgba(0, 255, 159, 0.1);
+  color: #00ff9f;
+  text-shadow: 0 0 6px #1cd18c;
+}
+
+/* BARRA DE BUSCA */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 12px;
+}
+
+.search-bar input {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btn-search {
+  background-color: transparent;
+  border: 1px solid #00ff9f;
+  color: #00ff9f;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #00ff9f;
+  color: #000;
+}
+
+/* LOGIN E CADASTRO */
+.login-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.login-link,
+.signup-link {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.login-link:hover,
+.signup-link:hover {
+  color: #00ff9f;
+  text-shadow: 0 0 8px #00ff9f;
+}
+
+.idioma-select {
+  background-color: #0c0c1e;
+  color: #fff;
+  border: 1px solid #0c9a79;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.875rem;
+  width: auto;
+}
+.idioma-select option {
+  background-color: #1e1e2f;
+  color: #fff;
+}
+
+.idioma-select:hover{
+  background-color: rgba(0, 255, 159, 0.1);
+  color: #00ff9f;
+  text-shadow: 0 0 6px #1cd18c;
+}
+
+/* RESPONSIVIDADE: colapsar menu em telas menores */
+@media (max-width: 768px) {
+  .navbar1 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+  }
+
+  .nav-start {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .login-container {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+  }
+}

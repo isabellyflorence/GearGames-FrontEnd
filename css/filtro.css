@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0e0e10;
+}
+
+/* Botão fixo para abrir/fechar filtro */
+.toggle-filtro-btn { /* Botão para abrir/fechar o filtro lateral */ 
+  position: fixed;
+  top: 150px;
+  left: 20px;
+  background-color: #50a79486;
+  color: #0e0e10;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold; 
+  cursor: pointer;
+  z-index: 1100; /* Para garantir que fique acima de outros elementos */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+.toggle-filtro-btn:hover {
+  background-color: #00e0b0;
+}
+
+/* Filtro lateral fixo e recolhido por padrão */
+.filtro-lateral { /* Filtro lateral que fica fixo na tela */
+  position: fixed;
+  top: 200px; /* Ajustado para ficar abaixo do navbar (exemplo) */
+  left: 0;
+  width: 220px;
+  height: 500px;
+  background: linear-gradient(180deg, #1f1f2eb4, #14141e71);
+  padding: 30px 20px;
+  border-right: 2px solid #2a2a3a;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+  border-radius: 0 10px 10px 0;
+  transition: transform 0.3s ease; /* Transição suave para o deslocamento */
+  /* Começa recolhido */
+  transform: translateX(-100%); /* Desloca para fora da tela */
+}
+
+/* Quando estiver aberto, remove o deslocamento */
+.filtro-lateral.aberto {
+  transform: translateX(0); /* Volta para a posição original */
+}
+
+.filtro-lateral::-webkit-scrollbar { /* Estilo da barra de rolagem do filtro lateral */
+  width: 8px;
+}
+
+.filtro-lateral h4 { /* Título do filtro lateral */
+  color: #00ffc8;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-filter { /* Estilo para a lista de categorias do filtro */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-filter li { /* Cada item da lista de categorias */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre checkbox e texto */
+  margin-bottom: 15px;
+}
+
+
+.category-filter input[type="checkbox"] { /* Estilo para as checkboxes do filtro */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00ffc8;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.category-filter input[type="checkbox"]:checked { /* Estilo quando a checkbox está marcada */
+  background-color: #00ffc8;
+}
+
+.category-filter input[type="checkbox"]:checked::after { /* Marca de seleção quando a checkbox está marcada */
+  content: '✓';
+  color: #0e0e10;
+  font-size: 14px;
+  position: absolute;
+}
+
+.category-filter input[type="checkbox"]:focus { /* Estilo quando a checkbox está focada */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 200, 0.5);
+}
+
+.category-filter label { /* Estilo para os rótulos das checkboxes */
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.category-filter label:hover { /* Efeito de hover nos rótulos das checkboxes */
+  color: #00ffc8;
+}
+
+
+
+/* Ajuste para o conteúdo principal, se quiser que o conteúdo se desloque quando filtro abrir */
+.main-content { /* Conteúdo principal da página */
+  margin-left: 0; /* Por padrão, sem espaço */
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Opcional: quando o filtro estiver aberto, o conteúdo desloca para a direita */
+.main-content.com-filtro-aberto { /* Classe adicionada ao conteúdo principal quando o filtro está aberto */
+  margin-left: 240px; /* um pouco maior que largura do filtro */
+}
+/* Estilo para o botão de fechar filtro */
+.filtro-lateral .close-filtro-btn { /* Botão para fechar o filtro lateral */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.btn-filtrar { /* Botão para aplicar o filtro */
+  width: 50%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #45f7d0d2;
+  border: none;
+  border-radius: 8px;
+  color: #0e0e10;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; /* para garantir que seja block *//
+}
+
+.btn-filtrar:hover { 
+  background-color: #48daba3a;
+}
+
+/* Para esconder o botão quando usar o atributo hidden */
+.btn-filtrar[hidden] { /* Quando o botão "Filtrar" estiver escondido */ 
+  display: none !important;
+}

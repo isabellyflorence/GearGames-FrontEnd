@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS Personalizados -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/carrossel.css" />
+  <link rel="stylesheet" href="css/filtro.css" />
+  <link rel="stylesheet" href="css/biblioteca.css" />
+  <link rel="stylesheet" href="css/card.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar1">
+    <div class="nav-start">
+      <a href="index.html">
+        <img class="logo-img" src="./img/gearg.png" alt="Logo Gear Games" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biblioteca.html">Biblioteca</a></li>
+        <li><a href="#">Assinatura</a></li>
+        <li><a href="#">Suporte</a></li>
+        <li>
+          <div class="categorias-dropdown">
+            <button class="categorias-btn">Categorias</button>
+            <div class="categorias-menu">
+              <a href="#">Multiplayer</a>
+              <a href="#">Simulação</a>
+              <a href="#">Terror</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Barra de busca -->
+    <form class="search-bar" role="search">
+      <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
+      <button class="btn-search" type="submit">
+        <i data-lucide="search" width="20px" height="20px"></i>
+      </button>
+    </form>
+
+    <!-- Login / Cadastro / Idioma -->
+    <div class="login-container">
+      <a href="#" class="login-link">Login</a>
+      <a href="#" class="signup-link">Cadastro</a>
+      <select class="form-select form-select-sm idioma-select" aria-label="Selecionar idioma">
+        <option value="pt" selected>🌐 Idioma</option>
+        <option value="pt">🇷🇷 PT</option>
+        <option value="en">🇺🇸 EN</option>
+        <option value="es">🇪🇸 ES</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container-centralizado">
+    <!-- CARROSSEL -->
+     
+    <div class="capsule-container">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner active" data-bs-interval="10000">
+     <div class="carousel-item">
+            <div class="screenshot" style="background-image: url('./img/carrossel1.jpg');"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="screenshot" style="background-image: url('./img/carrossel2.jpg');"></div>
+          </div>
+    
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="screenshot" style="background-image: url('./img/gta6.jpg');"></div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="screenshot" style="background-image: url('./img/rdr2.jpg');"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="screenshot" style="background-image: url('./img/tlou2.jpg');"></div>
+          </div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="popular">BIBLIOTECA</h1>
+
+    <!-- Botão para abrir/fechar o filtro -->
+    <button id="toggle-filtro" class="toggle-filtro-btn">
+      <i data-lucide="filter"></i> Filtros
+    </button>
+
+      <!-- Filtro Lateral -->
+      <div id="filtroLateral" class="filtro-lateral">
+        <h4>Filtrar por Categoria</h4>
+        <ul class="category-filter">
+          <li><input type="checkbox" value="acao" id="acao"> <label for="acao">Ação</label></li>
+          <li><input type="checkbox" value="aventura" id="aventura"> <label for="aventura">Aventura</label></li>
+          <li><input type="checkbox" value="corrida" id="corrida"> <label for="corrida">Corrida</label></li>
+          <li><input type="checkbox" value="puzzle" id="puzzle"> <label for="puzzle">Puzzle</label></li>
+        </ul>
+        <button id="btn-filtrar" class="btn-filtrar" hidden>Filtrar</button>
+
+      </div>
+
+  <!-- CARDS-->
+<div class="cards-wrapper">
+  <div id="cards-container" class="row">
+
+    <div class="col-md-3 mb-4" data-categoria="ação">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="ação">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardrdr2.jpg" class="card-img-top" alt="Red Dead Redemption 2">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Red Dead Redemption 2</h5>
+            <p class="card-text">
+              Viva o Velho Oeste em um mundo detalhado, com ação, emoção e liberdade total de exploração.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="terror">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardtlou2.jpg" class="card-img-top" alt="TLOU2">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">The Last of Us II</h5>
+            <p class="card-text">
+              Encare uma jornada emocional intensa com gráficos realistas e combates envolventes.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="ação">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardspiderman.jpg" class="card-img-top" alt="Spider-Man 2" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Spider-Man 2</h5>
+            <p class="card-text">
+              Viva como Peter Parker e Miles Morales em combates espetaculares e histórias emocionantes.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="aventura">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardhfw.jpg" class="card-img-top" alt="Horizon Forbidden West" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Horizon Forbidden West</h5>
+            <p class="card-text">
+              Explore um mundo pós-apocalíptico repleto de máquinas e mistérios.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="aventura">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgow.jpg" class="card-img-top" alt="God of War Ragnarök" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">God of War Ragnarök</h5>
+            <p class="card-text">
+              Acompanhe Kratos e Atreus em uma nova aventura épica cheia de mitologia nórdica.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="aventura">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardff.jpg" class="card-img-top" alt="Final Fantasy XVI" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Final Fantasy XVI</h5>
+            <p class="card-text">
+              Mergulhe em um mundo de fantasia épica com personagens memoráveis e batalhas emocionantes.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="aventura">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/carder.jpg" class="card-img-top" alt="Elden Ring" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Elden Ring</h5>
+            <p class="card-text">
+              Uma jornada épica em um mundo aberto cheio de desafios e segredos.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="ação">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardcyberp.jpg" class="card-img-top" alt="Cyberpunk 2077" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Cyberpunk 2077</h5>
+            <p class="card-text">
+              Mergulhe em Night City, uma metrópole futurista cheia de ação, intrigas e personalização.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4" data-categoria="aventura">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardassassinval.jpg" class="card-img-top" alt="Assassin's Creed Valhalla" />
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Assassin's Creed Valhalla</h5>
+            <p class="card-text">
+              Explore a era dos vikings em uma aventura épica de conquista e exploração.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center mb-2">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mb-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardgta6.jpg" class="card-img-top" alt="GTA VI">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">GTA 6</h5>
+            <p class="card-text">
+              Um mundo aberto gigantesco e cheio de vida. Explore cidades vibrantes, missões eletrizantes e crie sua história no universo do crime.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link text-decoration-none d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 d-flex flex-column">
+        <img src="./img/cardrdr2.jpg" class="card-img-top" alt="Red Dead Redemption 2">
+        <div class="card-body d-flex flex-column">
+          <div>
+            <h5 class="card-title">Red Dead Redemption 2</h5>
+            <p class="card-text">
+              Viva o Velho Oeste em um mundo detalhado, com ação, emoção e liberdade total de exploração.
+            </p>
+          </div>
+          <div class="mt-auto text-center">
+            <a href="#" class="ver-mais-link d-inline-flex align-items-center justify-content-center">
+              Ver mais <i data-lucide="plus" class="ms-1" style="width: 16px; height: 16px;"></i>
+            </a>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item text-center fw-bold">R$ 69,90</li>
+            </ul>
+            <div class="icon-actions mt-2">
+              <a href="#" class="card-link"><i data-lucide="shopping-basket"></i></a>
+              <a href="#" class="card-link"><i data-lucide="heart"></i></a>
+              <a href="#" class="card-link"><i data-lucide="share-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+
+   <!-- Paginação -->
+    <div class="pagination-container">
+      <ul class="pagination">
+        <li><a href="#">Anterior</a></li>
+        <li><a class="active" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">Próximo</a></li>
+      </ul>
+    </div>
+</main>
+
+    <!-- Footer -->
+     <footer class="footer">
+    <p>&copy; 2025 Gear Games. Todos os direitos reservados.</p>
+    <p>Contato: <a href="mailto:suportegg@geargames.com">suportegg@geargames.com</a></p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lucide Icons -->
+<script>
+  lucide.createIcons();
+</script>
+  <!-- Custom JS -->
+  <script src="filtro.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   BODY - Estilo principal
+   =========================== */
+body {
+  background-color: #202020 !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  overflow-y: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Área principal que expande para empurrar o footer */
+main {
+  flex: 1; 
+}
+
+  
+  /* ===========================
+   TÍTULO "POPULAR"
+   =========================== */
+.popular {
+  font-family: "Jersey 15", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  text-align: center;
+  padding: 11px 0;
+  background: linear-gradient(to right, #000000, #1a1a1a, rgba(12, 154, 121, 0.4));
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 66%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* ===========================
+   CONTAINER CENTRALIZADO
+   =========================== */
+.container-centralizado {
+  margin: 40px auto;
+  padding: 0;
+}
+
+.libary-link{
+  font-weight: bold; 
+  flex-wrap: wrap;
+  transition: color 0.3s ease;
+  width: 100%;
+  gap: 20px;
+  color: rgb(148, 204, 182);
+  text-decoration: none;
+}
+
+.libary-link:hover {
+  color: #00ff9f;
+  text-shadow: 0 0 8px #25a071;
+}
+/* ===========================
+   LINKS DE NAVEGAÇÃO
+   =========================== */
