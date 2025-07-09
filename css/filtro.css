@@ -9,6 +9,8 @@ body {
   position: fixed;
   top: 150px;
   left: 20px;
+  width: 45px;
+  height: 25px;
   background-color: #50a79486;
   color: #0e0e10;
   border: none;

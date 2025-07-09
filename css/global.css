@@ -30,12 +30,14 @@ main {
    =========================== */
 .popular {
   font-family: "Jersey 15", sans-serif;
+  color:rgb(255, 255, 255);
   font-weight: 400;
   font-size: 50px;
   text-align: center;
   padding: 11px 0;
-  background: linear-gradient(to right, #000000, #1a1a1a, rgba(12, 154, 121, 0.4));
+  background: linear-gradient(to right, #dcdcdc, #656363, rgba(43, 188, 154, 0.678));
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 22px;
   width: 66%;
   align-items: center;
   margin: 0 auto;
